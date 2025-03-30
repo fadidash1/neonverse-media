@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEONVERSE MEDIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css"> </head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <h1 class="glow">NEONVERSE MEDIA</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Benvenuti in <span class="neon-text">Neonverse</span></h2>
+        <p>La tua porta d'accesso all'eccellenza digitale.</p>
+        <button class="btn-glow">Esplora Ora</button>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="glow">La Storia di Neonverse</h2>
+        <div class="glassmorphism">
+            <p>
+                Fondata nel 2020, Neonverse Media è nata dalla passione di un gruppo di
+                esperti digitali con una visione comune: creare esperienze online
+                coinvolgenti e innovative.
+            </p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3 class="glow">2020: Fondazione</h3>
+                    <p>Nascita dell'agenzia e primi progetti pionieristici.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3 class="glow">2021: Espansione</h3>
+                    <p>Crescita del team e ampliamento dei servizi offerti.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3 class="glow">2023: Riconoscimenti</h3>
+                    <p>Premi e riconoscimenti per l'innovazione e la creatività.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servizi" class="container">
+        <h2 class="glow">I Nostri Servizi</h2>
+        <div class="glassmorphism">
+            <p>
+                Offriamo un'ampia gamma di servizi digitali per soddisfare ogni tua
+                esigenza. Dallo sviluppo web al marketing digitale, siamo qui per
+                aiutarti a raggiungere i tuoi obiettivi.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Sviluppo Web</h3>
+                    <p>Creazione di siti web moderni e responsive.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO</h3>
+                    <p>Ottimizzazione per i motori di ricerca.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Marketing Digitale</h3>
+                    <p>Strategie per aumentare la tua visibilità online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2 class="glow">Il Nostro Portfolio</h2>
+        <div class="glassmorphism">
+            <p>
+                Scopri alcuni dei nostri progetti più recenti e lasciati ispirare
+                dalla nostra creatività.
+            </p>
+        </div>
+        <div id="portfolio-grid" class="row">
+            <div class="col-md-6">
+                <div class="portfolio-item">
+                    <img
+                        src="https://source.unsplash.com/600x400/?webdesign"
+                        alt="Progetto 1"
+                    />
+                    <h3>Progetto Web Design</h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="portfolio-item">
+                    <img
+                        src="https://source.unsplash.com/600x400/?branding"
+                        alt="Progetto 2"
+                    />
+                    <h3>Progetto Branding</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recensioni" class="container">
+        <h2 class="glow">Cosa Dicono di Noi</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial-bubble">
+                <i class="fas fa-quote-left"></i>
+                <p>Ottimo lavoro!</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="testimonial-bubble">
+                <i class="fas fa-quote-left"></i>
+                <p>Servizio eccellente.</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="testimonial-bubble">
+                <i class="fas fa-quote-left"></i>
+                <p>Consigliatissimo!</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star"></i>
+        </div>
+    </section>
+
+    <section id="contatti" class="container">
+        <h2 class="glow">Contattaci</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="contatti-form">
+                    <input type="text" placeholder="Nome" />
+                    <input type="email" placeholder="Email" />
+                    <textarea placeholder="Messaggio"></textarea>
+                    <button class="btn-glow" type="submit">Invia</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h3>Informazioni di Contatto</h3>
+                    <p>Email: info@neonversemedia.com</p>
+                    <p>Telefono: +39 012 3456789</p>
+                    <p>
+                        Sede: Via della Innovazione, 1, 20121 Milano, Italia
+                        <a
+                            href="https://www.google.com/maps/place/Via+della+Innovazione,+1,+20121+Milano+MI,+Italia/@45.47721,9.206327,17z/data=!3m1!4b1!4m6!3m5!1s0x4786c6d1b99b52b5:0x9b1b9156157489c7!8m0!8d9.2085151!9m1!1e1?entry=ttu&g_ep=EgoyMDI0MDUzMDI1GAAiKzAoMACAQICIwAYYARgBGIASAFQAw%3D%3D"
+                            target="_blank"
+                            >Visualizza su Google Maps</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Neonverse Media. Tutti i diritti riservati.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

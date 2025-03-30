@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neonverse Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars during animation */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        #neon-title {
+            font-size: 4rem;
+            color: #00FFFF;
+            text-shadow:
+                0 0 8px rgba(0, 255, 255, 0.8),
+                0 0 16px rgba(0, 255, 255, 0.6),
+                0 0 24px rgba(0, 255, 255, 0.4);
+            animation: neon-glow 2s infinite alternate, flicker 1.5s infinite alternate;
+            user-select: none;
+            cursor: pointer;
+        }
+        @keyframes neon-glow {
+            from {
+                text-shadow:
+                    0 0 6px rgba(0, 255, 255, 0.5),
+                    0 0 12px rgba(0, 255, 255, 0.4),
+                    0 0 18px rgba(0, 255, 255, 0.3);
+            }
+            to {
+                text-shadow:
+                    0 0 10px rgba(0, 255, 255, 0.9),
+                    0 0 20px rgba(0, 255, 255, 0.7),
+                    0 0 30px rgba(0, 255, 255, 0.5);
+            }
+        }
+        @keyframes flicker {
+            from { opacity: 1; }
+            to { opacity: 0.8; }
+        }
+        #media-text {
+            font-size: 1.5rem;
+            color: #FF00FF;
+            text-shadow:
+                0 0 5px rgba(255, 0, 255, 0.8),
+                0 0 10px rgba(255, 0, 255, 0.6),
+                0 0 15px rgba(255, 0, 255, 0.4);
+            animation: pulse 3s infinite alternate;
+            user-select: none;
+            margin-top: 20px;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        #bg-layer1 {
+            background-image: url('https://images.unsplash.com/photo-1614850715740-e1b15f1d1f36?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with a futuristic city image */
+            transform: translateZ(0);
+        }
+        #bg-layer2 {
+            background-image: url('https://images.unsplash.com/photo-1542339394-712476c2769c?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with a space/nebula image */
+            transform: translateZ(-100px);
+            opacity: 0.7;
+        }
+        #bg-layer3 {
+            background-image: url('https://images.unsplash.com/photo-1580489944062-e3b1319dd761?q=80&w=3161&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with abstract neon lines */
+            transform: translateZ(-200px);
+            opacity: 0.5;
+            animation: move-bg 4s linear infinite;
+        }
+        @keyframes move-bg {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
+        .glowing-button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #39FF14;
+            border: 2px solid #39FF14;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #39FF14;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-family: 'Press Start 2P', sans-serif;
+            animation: button-glow 2s infinite alternate;
+        }
+        .glowing-button:hover {
+            background-color: #39FF14;
+            box-shadow: 0 0 20px #39FF14;
+            transform: scale(1.05);
+        }
+        @keyframes button-glow {
+            from {
+                box-shadow: 0 0 5px #39FF14;
+            }
+            to {
+                box-shadow: 0 0 15px #39FF14;
+            }
+        }
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <div class="parallax-bg">
+        <div id="bg-layer1" class="parallax-layer"></div>
+        <div id="bg-layer2" class="parallax-layer"></div>
+        <div id="bg-layer3" class="parallax-layer"></div>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="container flex flex-col items-center justify-center">
+        <h1 id="neon-title">NEONVERSE MEDIA</h1>
+        <p id="media-text">Enter the Digital Universe</p>
+        <button class="glowing-button">Explore</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('particle-canvas') });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor("#0D0D0D"); // Match the Deep Space Black
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 200;
+        const positions = new Float32Array(particlesCount * 3);
+        const colors = new Float32Array(particlesCount * 3);
+        for (let i = 0; i < particlesCount; i++) {
+            const i3 = i * 3;
+            positions[i3] = (Math.random() - 0.5) * 2000;
+            positions[i3 + 1] = (Math.random() - 0.5) * 2000;
+            positions[i3 + 2] = (Math.random() - 0.5) * 2000;
+            const color = new THREE.Color();
+            color.setHSL(Math.random(), 1, 0.5); // Random HSL for neon colors
+            colors[i3] = color.r;
+            colors[i3 + 1] = color.g;
+            colors[i3 + 2] = color.b;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 8,
+            vertexColors: true, // Use the color attribute
+            sizeAttenuation: true,
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+        camera.position.z = 500;
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.rotation.x += 0.005;
+            particles.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => {
+            const newWidth = window.innerWidth;
+            const newHeight = window.innerHeight;
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newWidth, newHeight);
+        });
+        const bgLayer1 = document.getElementById('bg-layer1');
+        const bgLayer2 = document.getElementById('bg-layer2');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            bgLayer1.style.transform = `translateZ(0) translateY(${scrollY * 0.2}px)`;
+            bgLayer2.style.transform = `translateZ(-100px) translateY(${scrollY * 0.1}px)`;
+        });
+        const neonTitle = document.getElementById('neon-title');
+        neonTitle.addEventListener('click', () => {
+            // Add a fun interaction on click, like a temporary color shift
+            neonTitle.style.color = '#39FF14'; // Neon Green
+            setTimeout(() => {
+                neonTitle.style.color = '#00FFFF'; // Electric Cyan
+            }, 500); // Revert after 0.5 seconds
+        });
+    </script>
+</body>
+</html>
